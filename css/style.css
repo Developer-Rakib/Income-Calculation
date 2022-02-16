@@ -92,6 +92,10 @@ body{
 	font-weight: 700;
 	border-radius: 30px;
 }
+
+.buttn:active{
+	background-color: rgb(153, 26, 64);
+}
 .save-box{}
 .save-box h5 {
 	margin-bottom: 0;
