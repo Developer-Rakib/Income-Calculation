@@ -23,10 +23,10 @@ function calculate() {
 
         if (parseFood >= 0 && parseRent >= 0 && parseClothe >= 0 && parseIncome >= 0) {
 
-            if (totalExpenses < parseIncome) {
+            if (totalExpenses < parseInt(incomeFeild.value)) {
 
                 expenses.innerText = totalExpenses;
-                let restBalace = parseIncome - totalExpenses;
+                let restBalace = parseInt(incomeFeild.value) - totalExpenses;
                 balance.innerText = restBalace;
                 remaningBalance.innerText = restBalace;
 
