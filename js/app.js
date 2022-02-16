@@ -21,7 +21,7 @@ function calculate() {
         let parseClothe = parseInt(clothesFeild.value);
         let totalExpenses =  parseFood + parseRent + parseClothe;
 
-        if (parseFood >= 0 && parseRent >= 0 && parseClothe >= 0 && parseIncome >= 0) {
+        if (parseFood >= 0 && parseRent >= 0 && parseClothe >= 0) {
 
             if (totalExpenses < parseInt(incomeFeild.value)) {
 
