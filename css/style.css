@@ -6,14 +6,13 @@
 	box-sizing: border-box;
 }
 body{
-
 	font-family: "Poppins","Hind Siliguri",sans-serif;
 }
 :root{
 	--main-color: rgb(250, 46, 108);
 }
 .container{
-	background-color: rgba(238, 238, 238, 0.699);
+	background-color: rgba(246, 246, 246, 0.548);
 
 }
 
@@ -39,7 +38,7 @@ body{
 	justify-content: center;
 }
 .calc-img img {
-	height: 600px;
+	height: 650px;
 	width: 610px;
 }
 
@@ -56,6 +55,15 @@ body{
 }
 .calc-container label {
 	display: block;
+	text-align: right;
+	width: 236px;
+}
+.calc-box {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .calc-container label input {
 	width: 154px;
@@ -73,6 +81,7 @@ body{
 .calc-container h4 {
 	font-size: 22px;
 	margin-top: 15px;
+	width: 236px;
 }
 
 .buttn {
@@ -88,6 +97,10 @@ body{
 	margin-bottom: 0;
 	margin-right: 10px;
 }
+.save-box label {
+	text-align: center;
+	width: auto;
+}
 .save-box button{}
 #save {
 	width: 72px;
@@ -95,17 +108,45 @@ body{
 	border-radius: 5px;
 	margin: 0 10px;
 }
+#remaning {
+	color: rgb(66, 66, 66);
+	width: 312px;
+	font-weight: 600;
+}
 
 
 
+/*--------------------		
+	respinsive layout
+---------------------- */
 
-
-
-
-
-
-
-
-@media (max-width : 600px) {
+@media (max-width : 550px) {
 	
+	.heading {
+		font-size: 22px;
+	}
+	.calc-img img {
+		height: 436px;
+		width: 332px;
+	}
+	.calc-container h4 {
+		font-size: 18px;
+		margin-top: 15px;
+		width: 236px;
+	}
+	.calc-container h3 {
+		font-size: 29px;
+	}
+	.calc-container h4 {
+		font-size: 18px;
+		margin-top: 6px;
+	}
+	.calc-container label {
+		font-size: 15px;
+	}
+	.buttn {
+		padding: 8px 17px;
+		font-size: 15px;
+	}
+
 }

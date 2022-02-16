@@ -1,4 +1,5 @@
 let incomeFeild = document.getElementById("income");
+let parseIncome = parseInt(incomeFeild.value);
 let foodFeild = document.getElementById("food");
 let rentFeild = document.getElementById("rent");
 let clothesFeild = document.getElementById("clothes");
@@ -13,7 +14,6 @@ function calculate() {
 
     if (isNaN(incomeFeild.value) == false && isNaN(foodFeild.value) == false && isNaN(rentFeild.value) == false && isNaN(clothesFeild.value) == false) {
 
-        let parseIncome = parseInt(foodFeild.value);
         let parseFood = parseInt(foodFeild.value);
         let parseRent = parseInt(rentFeild.value);
         let parseClothe = parseInt(clothesFeild.value);
@@ -21,7 +21,7 @@ function calculate() {
 
         if (parseFood >= 0 && parseRent >= 0 && parseClothe >= 0 && parseIncome >= 0) {
 
-            if (totalExpenses < parseInt(incomeFeild.value)) {
+            if (totalExpenses < parseIncome) {
 
                 expenses.innerText = totalExpenses;
                 let restBalace = parseInt(incomeFeild.value) - totalExpenses;
@@ -29,8 +29,8 @@ function calculate() {
                 remaningBalance.innerText = restBalace;
 
             } else {
-                
-                alert("Your income is more than your Expenses ")
+
+                alert("Your Expenses is more than your income")
             }
             
         } else {
@@ -46,17 +46,24 @@ function calculate() {
 function savingsFuction() {
 
     let percentage = document.getElementById("save");
-    let percentageAccordingToIncome = (parseInt(percentage.value) / 100) * parseInt(incomeFeild.value);
-    let savaingAmount = (parseInt(percentage.value) / 100) * parseInt(balance.innerText);
+    let parsePercentage = parseInt(percentage.value);
+    let percentageAccordingToIncome = (parsePercentage / 100) * parseIncome;
+    let savaingAmount = (parsePercentage / 100) * parseInt(balance.innerText);
 
     if (isNaN(percentage.value) == false) {
-        if (percentageAccordingToIncome < parseInt(balance.innerText)) {
-            document.getElementById("savings-balace").innerText = savaingAmount;
-            remaningBalance.innerText = parseInt(balance.innerText) - savaingAmount;
-    
+
+        if (parsePercentage >= 0) {
+            if (percentageAccordingToIncome < parseInt(balance.innerText)) {
+                document.getElementById("savings-balace").innerText = savaingAmount;
+                remaningBalance.innerText = parseInt(balance.innerText) - savaingAmount;
+        
+            } else {
+                alert("Your Saving is more than your Available balance")
+            }
         } else {
-            alert("Your Saving is more than your Available balance")
+            alert("Wrong Input!! Please Enter Positive Value")
         }
+
     } else {
         alert("Wrong Input!! Please Enter Number");
     }
@@ -67,10 +74,6 @@ document.getElementById("calc-submit-btn").addEventListener("click", function
  () {
     calculate();
     
-    // incomeFeild.value = "";
-    // foodFeild.value = "";
-    // rentFeild.value = "";
-    // clothesFeild.value = "";
 })
 
 
