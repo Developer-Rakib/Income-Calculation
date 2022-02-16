@@ -2,7 +2,7 @@
 <html>
 
 <head>
-   <title>Furni House</title>
+   <title>Income Calculation</title>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,14 +12,58 @@
 
    <script src="https://kit.fontawesome.com/be05696d9e.js" crossorigin="anonymous"></script>
 
-   <link href="style.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
+   <header>
+      <div class="container">
+         <h1 class="heading text-center">My Income Calculation</h1>
+      </div>
+   </header>
    
+   <main>
 
-   <script src="app.js"></script>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-7">
+                  <div class="calc-img py-4">
+                     <img class="img-fluid" src="images/pexels-polina-tankilevitch-6927359.jpg" alt="">
+                  </div>
+               </div>
+               <div class="col-lg-5">
+                  <div class="calc-container d-flex justify-content-center align-items-center">
+                     <div class="text-center">
+                        <h3>Income</h3>
+                        <label for="income">Income : <input type="text" id="income"></label>
+                        <h4>Expenses</h4>
+                        <label for="food">Food : <input type="text" id="food"></label>
+                        <label for="rent">Rent : <input type="text" id="rent"></label>
+                        <label for="clothes">Clothes : <input type="text" id="clothes"></label>
+                        
+                        <button id="calc-submit-btn" class="buttn mt-2">Calculate</button>
+
+                        <h4>Total Expenses : <span id="total-expenses">00</span></h4>
+                        <h4>Balance : <span id="balance">00</span></h4>
+                        <div class="save-box py-2 d-flex justify-content-center align-items-center">
+                           <label for="save">Save <input id="save" type="text"></label>
+                           <h5>%</h5>
+                           <button id="savings-btn" class="buttn">Save</button>
+                        </div>
+                        <h4>Saving Balance: <span id="savings-balace">00</span></h4>
+                        <h4>Remaining Balance: <span id="remaning-balance">00</span></h4>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+   </main>
+
+   <script src="js/app.js"></script>
 </body>
 
 </html>

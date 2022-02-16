@@ -6,11 +6,101 @@
 	box-sizing: border-box;
 }
 body{
+
 	font-family: "Poppins","Hind Siliguri",sans-serif;
 }
 :root{
-	--main-color: rgba(139, 139, 139, 0.89);
+	--main-color: rgb(250, 46, 108);
 }
+.container{
+	background-color: rgba(238, 238, 238, 0.699);
+
+}
+
+/*--------------------		
+	header section
+---------------------- */
+
+.heading {
+	font-size: 36px;
+	font-weight: 600;
+	color: var(--main-color);
+	padding: 20px 0;
+	margin-bottom: 0;
+}
+
+
+/*--------------------		
+	calculate section
+---------------------- */
+
+.calc-img {
+	display: flex;
+	justify-content: center;
+}
+.calc-img img {
+	height: 600px;
+	width: 610px;
+}
+
+.calc-container {
+	color: rgb(107, 107, 107);
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.calc-container h3 {
+	font-size: 33px;
+	font-weight: 600;
+	color: rgb(110, 110, 110);
+}
+.calc-container label {
+	display: block;
+}
+.calc-container label input {
+	width: 154px;
+	margin: 10px 0;
+	display: inline-block;
+	border: 2px solid gray;
+	border-radius: 7px;
+	text-align: center;
+	color: var(--main-color);
+}
+.calc-container label input:focus{
+	border: 2px solid var(--main-color);
+ outline: none;
+}
+.calc-container h4 {
+	font-size: 22px;
+	margin-top: 15px;
+}
+
+.buttn {
+	border: none;
+	padding: 10px 20px;
+	background: var(--main-color);
+	color: white;
+	font-weight: 700;
+	border-radius: 30px;
+}
+.save-box{}
+.save-box h5 {
+	margin-bottom: 0;
+	margin-right: 10px;
+}
+.save-box button{}
+#save {
+	width: 72px;
+	border: 2px solid gray;
+	border-radius: 5px;
+	margin: 0 10px;
+}
+
+
+
+
+
+
 
 
 
