@@ -1,6 +1,5 @@
 // element select 
 let incomeFeild = document.getElementById("income");
-let parseIncome = parseInt(incomeFeild.value);
 let foodFeild = document.getElementById("food");
 let rentFeild = document.getElementById("rent");
 let clothesFeild = document.getElementById("clothes");
@@ -15,7 +14,6 @@ function calculate() {
 
     // error handle 
     if (isNaN(incomeFeild.value) == false && isNaN(foodFeild.value) == false && isNaN(rentFeild.value) == false && isNaN(clothesFeild.value) == false) {
-
         let parseFood = parseInt(foodFeild.value);
         let parseRent = parseInt(rentFeild.value);
         let parseClothe = parseInt(clothesFeild.value);
@@ -49,7 +47,7 @@ function savingsFuction() {
 
     let percentage = document.getElementById("save");
     let parsePercentage = parseInt(percentage.value);
-    let percentageAccordingToIncome = (parsePercentage / 100) * parseIncome;
+    let percentageAccordingToIncome = (parsePercentage / 100) * parseInt(incomeFeild.value);
     let savaingAmount = (parsePercentage / 100) * parseInt(balance.innerText);
 
     if (isNaN(percentage.value) == false) {
