@@ -48,14 +48,13 @@ function savingsFuction() {
     let percentage = document.getElementById("save");
     let parsePercentage = parseInt(percentage.value);
     let percentageAccordingToIncome = (parsePercentage / 100) * parseInt(incomeFeild.value);
-    let savaingAmount = (parsePercentage / 100) * parseInt(balance.innerText);
 
     if (isNaN(percentage.value) == false) {
 
         if (parsePercentage >= 0) {
             if (percentageAccordingToIncome < parseInt(balance.innerText)) {
-                document.getElementById("savings-balace").innerText = savaingAmount;
-                remaningBalance.innerText = parseInt(balance.innerText) - savaingAmount;
+                document.getElementById("savings-balace").innerText = percentageAccordingToIncome;
+                remaningBalance.innerText = parseInt(balance.innerText) - percentageAccordingToIncome;
         
             } else {
                 alert("Your Saving is more than your Available balance")
