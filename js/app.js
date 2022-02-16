@@ -1,3 +1,4 @@
+// element select 
 let incomeFeild = document.getElementById("income");
 let parseIncome = parseInt(incomeFeild.value);
 let foodFeild = document.getElementById("food");
@@ -12,6 +13,7 @@ let remaningBalance = document.getElementById("remaning-balance");
  //   calculate fuction
 function calculate() {
 
+    // error handle 
     if (isNaN(incomeFeild.value) == false && isNaN(foodFeild.value) == false && isNaN(rentFeild.value) == false && isNaN(clothesFeild.value) == false) {
 
         let parseFood = parseInt(foodFeild.value);
@@ -24,7 +26,7 @@ function calculate() {
             if (totalExpenses < parseIncome) {
 
                 expenses.innerText = totalExpenses;
-                let restBalace = parseInt(incomeFeild.value) - totalExpenses;
+                let restBalace = parseIncome - totalExpenses;
                 balance.innerText = restBalace;
                 remaningBalance.innerText = restBalace;
 
