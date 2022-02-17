@@ -6,10 +6,28 @@ let clothesFeild = document.getElementById("clothes");
 let expenses = document.getElementById("total-expenses");
 let balance = document.getElementById("balance");
 let remaningBalance = document.getElementById("remaning-balance");
-let errorElement = document.getElementById("error-messgae");
-let errorText = document.getElementById("error-text");
+let errorparentElement = document.getElementById("error-messgae");
 let errorSavingElement = document.getElementById("error-savings");
-let errorSave = document.getElementById("error-save");
+
+
+
+// erro handle fucntion 
+function errorHanble (messgae , parentId, cureentId) {
+    let errorElement =  document.getElementById(parentId);
+    let errorText =  document.getElementById(cureentId);
+    errorText.innerText = messgae;
+    errorElement.style.display = "block";
+}
+
+
+// empty value fucntion
+function emptyFucntion () {
+    incomeFeild.value = "";
+    foodFeild.value = "";
+    rentFeild.value = "";
+    clothesFeild.value = "";
+}
+
 
 
 
@@ -30,28 +48,27 @@ function calculate() {
                 expenses.innerText = totalExpenses;
                 let restBalace = parseInt(incomeFeild.value) - totalExpenses;
                 balance.innerText = restBalace;
-                errorElement.style.display = "none";
+                errorparentElement.style.display = "none";
 
             } else {
-
-                errorText.innerText = "Your Expenses is more than your income";
-                errorElement.style.display = "block";
+                errorHanble("Your Expenses is more than your income", "error-messgae", "error-text")
             }
             
         } else {
-            errorText.innerText = "Wrong Input!! Please Enter Positive Value";
-            errorElement.style.display = "block";
+
+            errorHanble("Wrong Input!! Please Enter Positive Value", "error-messgae", "error-text")
             emptyFucntion();
 
         }
 
     } else {
-        errorText.innerText = "Wrong Input!! Please Enter Number";
-        errorElement.style.display = "block";
+        errorHanble("Wrong Input!! Please Enter Number", "error-messgae", "error-text")
         emptyFucntion();
 
     }
 }
+
+
 
 // savings Fuction
 function savingsFuction() {
@@ -69,27 +86,19 @@ function savingsFuction() {
                 errorSavingElement.style.display = "none";
         
             } else {
-                errorSave.innerText = "Your Saving is more than your Available balance";
-                errorSavingElement.style.display = "block";
+                errorHanble("Your Saving is more than your Available balance", "error-savings", "error-save")
             }
         } else {
-            errorSave.innerText = "Wrong Input!! Please Enter Positive Value";
-            errorSavingElement.style.display = "block";
+            errorHanble("Wrong Input!! Please Enter Positive Value", "error-savings", "error-save")
         }
 
     } else {
-        errorSave.innerText = "Wrong Input!! Please Enter Number";
-        errorSavingElement.style.display = "block";
+        errorHanble("Wrong Input!! Please Enter Number", "error-savings", "error-save")
     }
 }
 
-// empty value fucntion
-function emptyFucntion () {
-    incomeFeild.value = "";
-    foodFeild.value = "";
-    rentFeild.value = "";
-    clothesFeild.value = "";
-}
+
+
 
 // calculate
 document.getElementById("calc-submit-btn").addEventListener("click", function 
