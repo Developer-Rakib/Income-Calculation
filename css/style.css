@@ -92,6 +92,18 @@ body{
 	font-weight: 700;
 	border-radius: 30px;
 }
+#error-messgae {
+	color: rgb(255, 46, 46);
+	padding: 6px 7px;
+	border-radius: 5px;
+	display: none;
+}
+#error-savings {
+	color: rgb(255, 46, 46);
+	padding: 6px 7px;
+	border-radius: 5px;
+	display: none;
+}
 
 .buttn:active{
 	background-color: rgb(153, 26, 64);

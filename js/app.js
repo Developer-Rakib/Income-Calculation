@@ -6,6 +6,10 @@ let clothesFeild = document.getElementById("clothes");
 let expenses = document.getElementById("total-expenses");
 let balance = document.getElementById("balance");
 let remaningBalance = document.getElementById("remaning-balance");
+let errorElement = document.getElementById("error-messgae");
+let errorText = document.getElementById("error-text");
+let errorSavingElement = document.getElementById("error-savings");
+let errorSave = document.getElementById("error-save");
 
 
 
@@ -26,19 +30,26 @@ function calculate() {
                 expenses.innerText = totalExpenses;
                 let restBalace = parseInt(incomeFeild.value) - totalExpenses;
                 balance.innerText = restBalace;
-                remaningBalance.innerText = restBalace;
+                errorElement.style.display = "none";
 
             } else {
 
-                alert("Your Expenses is more than your income")
+                errorText.innerText = "Your Expenses is more than your income";
+                errorElement.style.display = "block";
             }
             
         } else {
-            alert("Wrong Input!! Please Enter Positive Value")
+            errorText.innerText = "Wrong Input!! Please Enter Positive Value";
+            errorElement.style.display = "block";
+            emptyFucntion();
+
         }
 
     } else {
-        alert("Wrong Input!! Please Enter Number")
+        errorText.innerText = "Wrong Input!! Please Enter Number";
+        errorElement.style.display = "block";
+        emptyFucntion();
+
     }
 }
 
@@ -55,17 +66,29 @@ function savingsFuction() {
             if (percentageAccordingToIncome < parseInt(balance.innerText)) {
                 document.getElementById("savings-balace").innerText = percentageAccordingToIncome;
                 remaningBalance.innerText = parseInt(balance.innerText) - percentageAccordingToIncome;
+                errorSavingElement.style.display = "none";
         
             } else {
-                alert("Your Saving is more than your Available balance")
+                errorSave.innerText = "Your Saving is more than your Available balance";
+                errorSavingElement.style.display = "block";
             }
         } else {
-            alert("Wrong Input!! Please Enter Positive Value")
+            errorSave.innerText = "Wrong Input!! Please Enter Positive Value";
+            errorSavingElement.style.display = "block";
         }
 
     } else {
-        alert("Wrong Input!! Please Enter Number");
+        errorSave.innerText = "Wrong Input!! Please Enter Number";
+        errorSavingElement.style.display = "block";
     }
+}
+
+// empty value fucntion
+function emptyFucntion () {
+    incomeFeild.value = "";
+    foodFeild.value = "";
+    rentFeild.value = "";
+    clothesFeild.value = "";
 }
 
 // calculate
